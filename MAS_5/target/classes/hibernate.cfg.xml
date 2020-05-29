@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC
+        "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+
+<hibernate-configuration>
+    <session-factory>
+        <!--        <property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property>-->
+        <!--        <property name="hibernate.connection.url">jdbc:mysql://127.0.0.1:3306/mas_db?useSSL=false&amp;allowPublicKeyRetrieval=true</property>-->
+        <!--        <property name="hibernate.connection.url">jdbc:mysql://127.0.0.1:3306/mas_db?useSSL=false</property>-->
+        <!--        <property name="hibernate.connection.url">jdbc:h2:mem:db1;DB_CLOSE_DELAY=-1</property>-->
+        <property name="connection.url">jdbc:h2:~/db-test.h2</property>
+        <property name="hibernate.connection.username">root</property>
+        <property name="hibernate.connection.password">pass</property>
+        <!--        <property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property>-->
+        <property name="hibernate.dialect">org.hibernate.dialect.H2Dialect</property>
+        <property name="hibernate.connection.driver_class">org.h2.Driver</property>
+
+        <property name="connection.pool_size">1</property>
+
+
+        <!-- show mysql queries output in console -->
+        <property name="hibernate.show_sql">false</property>
+
+        <!-- manage automatic database creation -->
+        <property name="hibernate.hbm2ddl.auto">create-drop</property>
+
+        <mapping class="Samochod"/>
+        <mapping class="Sportowy"/>
+        <mapping class="Miejski"/>
+        <mapping class="Pracownik"/>
+    </session-factory>
+</hibernate-configuration>
